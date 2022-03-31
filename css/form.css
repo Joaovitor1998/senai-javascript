@@ -15,8 +15,9 @@ select.fordform {
     color: #807d7d;
 }
 
-input:focus-visible {
+input:focus-visible, textarea:focus-visible {
     outline: none;
+    border-bottom: 2.5px solid blue;
 }
 
 select:focus-visible {
@@ -41,14 +42,67 @@ h2 {
     font-weight: 800;
 }
 
-
 button {
     width: 200px;
     height: 40px;
     margin-right: 8px;
     float: right;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+button:hover{
+    width:205px;
+    height: 45px;
+    background-color: #1b3593;
 }
 
 .titulo {
     margin-left: 8px;
+}
+
+.form-success, .form-error{
+    --success-span-width: 250px;
+    position: fixed;
+    top: 20px;
+    width: var(--success-span-width);
+    left: calc(50% - (var(--success-span-width) / 2));
+    text-align: center;
+    border-radius: 15px;
+    padding: 15px;
+    color: white;
+}
+
+.form-success{
+    background-color: rgb(11, 158, 6);
+}
+
+.field-error{
+    border: 2px solid red;
+}
+
+.fadeOut{
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+}
+
+.form-error{
+    background-color: rgb(212, 18, 18);
+    color: white;
+}
+
+textarea.fordform{
+    height: 150px;
+    resize: none;
+}
+
+span.error-message{
+    color: red;
+    font-weight: bolder;
+    padding: 4px;
+    margin: 10px;
+    margin-left: 25px;
+}
+span.error-message::before{
+    content: "* ";
 }
